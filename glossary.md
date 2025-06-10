@@ -340,144 +340,179 @@ Glossary
 
     **Not to be confused with:** Multisig pubkey scripts (also called "bare multisig", these multisig scripts don't use P2SH encapsulation), P2SH (general P2SH, of which P2SH multisig is a specific instance that was special cased up until Bitcoin Core 0.10.0)
 
-  Parent key
-  Parent public key
-  Parent private key
-    In HD wallets, a key used to derive child keys.  The key can be either a private key or a public key, and the key derivation may also require a chain code.
+# Parent key / Parent public key / Parent private key
+* | HD wallets,
+  * key 
+    * uses
+      * derive child keys
+    * types
+      * private key
+      * public key
+* != Public key
 
-    **Not to be confused with:** Public key (derived from a private key, not a parent key)
+# Payment protocol / Payment request
+* ⚠️deprecated protocol ⚠️
+  * uses |
+    * early versions of Bitcoin
+  * Reason: 🧠insecure, discontinued protocol🧠 
+* defined | BIP70
+* lets spenders
+  * get signed payment details -- from -- receivers
+* != IP-to-IP payment protocol 
 
-  Payment protocol
-  Payment request
-    The deprecated protocol defined in BIP70 (and other BIPs) which lets spenders get signed payment details from receivers.
+# Private key
+* == keypair's private portion /
+  * create signatures / OTHER people can -- , via the public key, -- verify 
+* != 
+  * Public key
+  * Parent key
+    * (a key used to create child keys, not necessarily a private key)
 
-    **Not to be confused with:** IP-to-IP payment protocol (an insecure, discontinued protocol included in early versions of Bitcoin)
+# Proof of work / POW
+* TODO: hash below a target value / can only be obtained, on average, by performing a certain amount of brute force work---therefore demonstrating proof of work.
 
-  Private key
-    The private portion of a keypair which can create signatures that other people can verify using the public key.
+# Pubkey script / ScriptPubKey
+* == script / 
+  * included | outputs
+  * 👀sets the conditions -- to spend -- satoshis👀
+    * data / match the conditions -- are -- provided | script's signature 
+* `scriptPubKey`
+  * name | code
+* != Pubkey
 
-    **Not to be confused with:** Public key (data derived from the private key), Parent key (a key used to create child keys, not necessarily a private key)
+# Public key
+* == keypair's public portion
+  * derived -- from the -- private key 
+  * uses
+    * verify signatures / made with the keypair's private portion 
+    * 👀part of a pubkey script👀
+* ❌NOT provide a❌
+  * programmable authentication mechanism
+* != 
+  * Private key
+  * Parent key (a key used to create child keys, not necessarily a public key)
 
-  Proof of work
-  POW
-    A hash below a target value which can only be obtained, on average, by performing a certain amount of brute force work---therefore demonstrating proof of work.
+        Replace by fee
+        RBF
+        Opt-in replace by fee
+          Replacing one version of an unconfirmed transaction with a different version of the transaction that pays a higher transaction fee.  May use BIP125 signaling.
 
-  Pubkey script
-  ScriptPubKey
-    A script included in outputs which sets the conditions that must be fulfilled for those satoshis to be spent.  Data for fulfilling the conditions can be provided in a signature script. Pubkey Scripts are called a scriptPubKey in code.
+          **Not to be confused with:** Child pays for parent, CPFP
 
-    **Not to be confused with:** Pubkey (a public key, which can be used as part of a pubkey script but don't provide a programmable authentication mechanism), Signature script (a script that provides data to the pubkey script)
+# Redeem script / RedeemScript
+* == script /
+  * 's function == pubkey script's function
+  * uses
+    * create a P2SH address
+      * used | actual pubkey script
+      * steps
+        * copy it
+        * hash 
+    * place | spending signature script
+      * steps
+        * copy it
+      * enforce its conditions
 
-  Public key
-    The public portion of a keypair which can be used to verify signatures made with the private portion of the keypair.
+* != Signature script
 
-    **Not to be confused with:** Private key (data from which the public key is derived), Parent key (a key used to create child keys, not necessarily a public key)
+              Regtest
+              Regression test mode
+                A local testing environment in which developers can almost instantly generate blocks on demand for testing events, and can create private satoshis with no real-world value.
 
-  Replace by fee
-  RBF
-  Opt-in replace by fee
-    Replacing one version of an unconfirmed transaction with a different version of the transaction that pays a higher transaction fee.  May use BIP125 signaling.
+                **Not to be confused with:** Testnet (a global testing environment which mostly mimics mainnet)
 
-    **Not to be confused with:** Child pays for parent, CPFP
+              RPC byte order
+                A hash digest displayed with the byte order reversed; used in Bitcoin Core RPCs, many block explorers, and other software.
 
-  Redeem script
-  RedeemScript
-    A script similar in function to a pubkey script. One copy of it is hashed to create a P2SH address (used in an actual pubkey script) and another copy is placed in the spending signature script to enforce its conditions.
+                **Not to be confused with:** Internal byte order (hash digests displayed in their typical order; used in serialized blocks and serialized transactions)
 
-    **Not to be confused with:** Signature script (a script that provides data to the pubkey script, which includes the redeem script in a P2SH input)
+              Sequence number
+                Part of all transactions. A number intended to allow unconfirmed time-locked transactions to be updated before being finalized; not currently used except to disable locktime in a transaction
 
-  Regtest
-  Regression test mode
-    A local testing environment in which developers can almost instantly generate blocks on demand for testing events, and can create private satoshis with no real-world value.
+                **Not to be confused with:** Output index number / vout (this is the 0-indexed number of an output within a transaction used by a later transaction to refer to that specific output)
 
-    **Not to be confused with:** Testnet (a global testing environment which mostly mimics mainnet)
+              Serialized block
+                A complete block in its binary format---the same format used to calculate total block byte size; often represented using hexadecimal.
 
-  RPC byte order
-    A hash digest displayed with the byte order reversed; used in Bitcoin Core RPCs, many block explorers, and other software.
+              Serialized transaction
+              Raw transaction
+                Complete transactions in their binary format; often represented using hexadecimal.  Sometimes called raw format because of the various Bitcoin Core commands with "raw" in their names.
 
-    **Not to be confused with:** Internal byte order (hash digests displayed in their typical order; used in serialized blocks and serialized transactions)
+              SIGHASH_ALL
+                Default signature hash type which signs the entire transaction except any signature scripts, preventing modification of the signed parts.
 
-  Sequence number
-    Part of all transactions. A number intended to allow unconfirmed time-locked transactions to be updated before being finalized; not currently used except to disable locktime in a transaction
+              SIGHASH_ANYONECANPAY
+                A signature hash type which signs only the current input.
 
-    **Not to be confused with:** Output index number / vout (this is the 0-indexed number of an output within a transaction used by a later transaction to refer to that specific output)
+                **Not to be confused with:** SIGHASH_SINGLE (which signs this input, its corresponding output, and other inputs partially)
 
-  Serialized block
-    A complete block in its binary format---the same format used to calculate total block byte size; often represented using hexadecimal.
+              SIGHASH_NONE
+                Signature hash type which only signs the inputs, allowing anyone to change the outputs however they'd like.
 
-  Serialized transaction
-  Raw transaction
-    Complete transactions in their binary format; often represented using hexadecimal.  Sometimes called raw format because of the various Bitcoin Core commands with "raw" in their names.
+              SIGHASH_SINGLE
+                Signature hash type that signs the output corresponding to this input (the one with the same index value), this input, and any other inputs partially. Allows modification of other outputs and the sequence number of other inputs.
 
-  SIGHASH_ALL
-    Default signature hash type which signs the entire transaction except any signature scripts, preventing modification of the signed parts.
+                **Not to be confused with:** SIGHASH_ANYONECANPAY (a flag to signature hash types that only signs this single input)
 
-  SIGHASH_ANYONECANPAY
-    A signature hash type which signs only the current input.
+              Signature
+                A value related to a public key which could only have reasonably been created by someone who has the private key that created that public key. Used in Bitcoin to authorize spending satoshis previously sent to a public key.
 
-    **Not to be confused with:** SIGHASH_SINGLE (which signs this input, its corresponding output, and other inputs partially)
+              Signature hash
+              Sighash
+                A flag to Bitcoin signatures that indicates what parts of the transaction the signature signs.  (The default is SIGHASH_ALL.) The unsigned parts of the transaction may be modified.
 
-  SIGHASH_NONE
-    Signature hash type which only signs the inputs, allowing anyone to change the outputs however they'd like.
+                **Not to be confused with:** Signed hash (a hash of the data to be signed), Transaction malleability / transaction mutability (although non-default sighash flags do allow optional malleability, malleability comprises any way a transaction may be mutated)
 
-  SIGHASH_SINGLE
-    Signature hash type that signs the output corresponding to this input (the one with the same index value), this input, and any other inputs partially. Allows modification of other outputs and the sequence number of other inputs.
+# Signature script / ScriptSig
+* == data /
+  * generated -- by a -- spender
+  * uses
+    * as variable -- to satisfy a -- pubkey script
+  * provides
+    * data | pubkey script / includes the redeem script | P2SH input 
+* `ScriptSig`
+  * named | code
 
-    **Not to be confused with:** SIGHASH_ANYONECANPAY (a flag to signature hash types that only signs this single input)
+* != ECDSA signature
 
-  Signature
-    A value related to a public key which could only have reasonably been created by someone who has the private key that created that public key. Used in Bitcoin to authorize spending satoshis previously sent to a public key.
+              SPV
+              Simplified Payment Verification
+              Lightweight client
+              Thin client
+                A method for verifying if particular transactions are included in a block without downloading the entire block.  The method is used by some lightweight Bitcoin clients.
 
-  Signature hash
-  Sighash
-    A flag to Bitcoin signatures that indicates what parts of the transaction the signature signs.  (The default is SIGHASH_ALL.) The unsigned parts of the transaction may be modified.
+              Soft fork
+                A softfork is a change to the bitcoin protocol wherein only previously valid blocks/transactions are made invalid. Since old nodes will recognise the new blocks as valid, a softfork is backward-compatible.
 
-    **Not to be confused with:** Signed hash (a hash of the data to be signed), Transaction malleability / transaction mutability (although non-default sighash flags do allow optional malleability, malleability comprises any way a transaction may be mutated)
+                **Not to be confused with:** Fork (a regular fork where all nodes follow the same consensus rules, so the fork is resolved once one chain has more proof of work than another), Hard fork (a permanent divergence in the block chain caused by non-upgraded nodes not following new consensus rules), Software fork (when one or more developers permanently develops a codebase separately from other developers), Git fork (when one or more developers temporarily develops a codebase separately from other developers
 
-  Signature script
-  ScriptSig
-    Data generated by a spender which is almost always used as variables to satisfy a pubkey script. Signature Scripts are called scriptSig in code.
+              Stale block
+                Blocks which were successfully mined but which aren't included on the current best block chain, likely because some other block at the same height had its chain extended first.
 
-    **Not to be confused with:** ECDSA signature (a signature, which can be used as part of a pubkey script in addition to other data)
+                **Not to be confused with:** Orphan block (a block whose previous (parent) hash field points to an unknown block, meaning the orphan can't be validated)
 
-  SPV
-  Simplified Payment Verification
-  Lightweight client
-  Thin client
-    A method for verifying if particular transactions are included in a block without downloading the entire block.  The method is used by some lightweight Bitcoin clients.
+              Standard Transaction
+                A transaction that passes Bitcoin Core's IsStandard() and IsStandardTx() tests. Only standard transactions are mined or broadcast by peers running the default Bitcoin Core software.
 
-  Soft fork
-    A softfork is a change to the bitcoin protocol wherein only previously valid blocks/transactions are made invalid. Since old nodes will recognise the new blocks as valid, a softfork is backward-compatible.
+              Start string
+              Network magic
+                Four defined bytes which start every message in the Bitcoin P2P protocol to allow seeking to the next message.
 
-    **Not to be confused with:** Fork (a regular fork where all nodes follow the same consensus rules, so the fork is resolved once one chain has more proof of work than another), Hard fork (a permanent divergence in the block chain caused by non-upgraded nodes not following new consensus rules), Software fork (when one or more developers permanently develops a codebase separately from other developers), Git fork (when one or more developers temporarily develops a codebase separately from other developers
+              Testnet
+                A global testing environment in which developers can obtain and spend satoshis that have no real-world value on a network that is very similar to the Bitcoin mainnet.
 
-  Stale block
-    Blocks which were successfully mined but which aren't included on the current best block chain, likely because some other block at the same height had its chain extended first.
+                **Not to be confused with:** Regtest (a local testing environment where developers can control block generation)
 
-    **Not to be confused with:** Orphan block (a block whose previous (parent) hash field points to an unknown block, meaning the orphan can't be validated)
+              Token
+                A token is a programmable digital asset with its own codebase that resides on an already existing block chain. Tokens are used to help facilitate the creation of decentralized applications.
 
-  Standard Transaction
-    A transaction that passes Bitcoin Core's IsStandard() and IsStandardTx() tests. Only standard transactions are mined or broadcast by peers running the default Bitcoin Core software.
+                **Not to be confused with:** Bitcoins, Satoshis, Security token, Denominations
 
-  Start string
-  Network magic
-    Four defined bytes which start every message in the Bitcoin P2P protocol to allow seeking to the next message.
+              Transaction fee
+              Miners fee
+                The amount remaining when the value of all outputs in a transaction are subtracted from all inputs in a transaction; the fee is paid to the miner who includes that transaction in a block.
 
-  Testnet
-    A global testing environment in which developers can obtain and spend satoshis that have no real-world value on a network that is very similar to the Bitcoin mainnet.
-
-    **Not to be confused with:** Regtest (a local testing environment where developers can control block generation)
-
-  Token
-    A token is a programmable digital asset with its own codebase that resides on an already existing block chain. Tokens are used to help facilitate the creation of decentralized applications.
-
-    **Not to be confused with:** Bitcoins, Satoshis, Security token, Denominations
-
-  Transaction fee
-  Miners fee
-    The amount remaining when the value of all outputs in a transaction are subtracted from all inputs in a transaction; the fee is paid to the miner who includes that transaction in a block.
-
-    **Not to be confused with:** Minimum relay fee (the lowest fee a transaction must pay to be accepted into the memory pool and relayed by Bitcoin Core nodes)
+                **Not to be confused with:** Minimum relay fee (the lowest fee a transaction must pay to be accepted into the memory pool and relayed by Bitcoin Core nodes)
 
 # Txid
 * == identifier
