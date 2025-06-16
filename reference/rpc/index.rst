@@ -134,8 +134,9 @@ Util RPCs
 Wallet RPCs
 -----------
 
-**Note:** the wallet RPCs are only available if Bitcoin Core was built
-with wallet support, which is the default.
+* requirements
+   * 👀Bitcoin Core was built -- with -- wallet support👀
+      * == default one
 
 .. toctree::
   :maxdepth: 1

@@ -1,7 +1,14 @@
-This repository contains a tool to generate Bitcoin Core RPC documentation. It
-requires a running `bitcoin-cli` client and puts out the documentation in
-Markdown format as used on [bitcoin.org](https://github.com/bitcoin-dot-org/bitcoin.org/tree/master/_data/devdocs/en/bitcoin-core/rpcs).
+* tool / 
+  * 👀generate Bitcoin Core RPC documentation👀
 
-Run `rpc-docs-helper` to get command line help. Run `rpc-docs-helper generate`
-to generate the markdown. Run `pytest` to run the unit tests if you want to work
-on the tool itself.
+* requirements
+  * run `bitcoin-cli` client
+  * documentation -- as -- [bitcoin.org](https://github.com/bitcoin-dot-org/bitcoin.org/tree/master/_data/devdocs/en/bitcoin-core/rpcs)
+
+* steps
+  * `rpc-docs-helper`
+    * get the CL help
+  * `rpc-docs-helper generate`
+    * generate the markdown
+  * `pytest`
+    * run the unit tests

@@ -6,7 +6,7 @@ getmempoolinfo
 
 ``getmempoolinfo``
 
-Returns details on the active state of the TX memory pool.
+Returns TX memory pool's active state's details
 
 Result
 ~~~~~~

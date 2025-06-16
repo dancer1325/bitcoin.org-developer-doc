@@ -1,15 +1,16 @@
 Terms
 =====
 
-.. note:: This is a temporary page with references used as targets for links in the documentation. They should be replaced by adding proper labels inline in the respective pages. This is more easily be done manually so this page acts as a temporary placeholder for that until the automatic import and conversion to RST is completed.
-
 .. _signature_script_modification_warning:
 
 signature_script_modification_warning (developer-reference) (`original target <https://bitcoin.org/en/developer-reference#signature_script_modification_warning>`__)
 
-.. _term-bitcoin-uri:
-
-term-bitcoin-uri (payment-processing-guide) (`original target <https://bitcoin.org/en/payment-processing-guide#term-bitcoin-uri>`__): A URI which allows receivers to encode payment details so spenders don't have to manually enter addresses and other details.
+* “bitcoin:” URI
+  * _term-bitcoin-uri:
+  * == URI /
+    * allows
+      * 👀receivers can encode payment details👀
+        * -> spenders do NOT have to MANUALLY enter addresses & other details
 
 .. _term-certificate-chain:
 
@@ -82,13 +83,15 @@ term-msg_witness_block (developer-reference) (`original target <https://bitcoin.
 
 term-msg_witness_tx (developer-reference) (`original target <https://bitcoin.org/en/developer-reference#term-msg_witness_tx>`__): An alternative of the transaction data type identifier of an inventory on the P2P network used to request a transaction with witness serialization for SegWit.
 
-.. _term-op-checkmultisig:
+* `OP_CHECKMULTISIG`
+  * .. _term-op-checkmultisig
+  * == `Opcode` /
+    * if m provided signatures sign the transaction's correct parts & == n provided public keys -> returns true 
 
-term-op-checkmultisig (developer-reference) (`original target <https://bitcoin.org/en/developer-reference#term-op-checkmultisig>`__): Opcode which returns true if one or more provided signatures (m) sign the correct parts of a transaction and match one or more provided public keys (n).
-
-.. _term-op-checksig:
-
-term-op-checksig (developer-reference) (`original target <https://bitcoin.org/en/developer-reference#term-op-checksig>`__): Opcode which returns true if a signature signs the correct parts of a transaction and matches a provided public key.
+* `OP_CHECKSIG`
+  * .. _term-op-checksig:
+  * == `Opcode` / 
+    * if a signature signs the transaction's correct parts & == provided public key -> returns true 
 
 .. _term-op-dup:
 
@@ -145,10 +148,6 @@ term-pp-expires (developer-examples) (`original target <https://bitcoin.org/en/d
 .. _term-pp-memo:
 
 term-pp-memo (developer-examples) (`original target <https://bitcoin.org/en/developer-examples#term-pp-memo>`__): The memo fields of PaymentDetails, Payment, and PaymentACK which allow spenders and receivers to send each other memos.
-
-.. _term-pp-merchant-data:
-
-term-pp-merchant-data (developer-examples) (`original target <https://bitcoin.org/en/developer-examples#term-pp-merchant-data>`__): The merchant_data part of PaymentDetails and Payment which allows the receiver to send arbitrary data to the spender in PaymentDetails and receive it back in Payments.
 
 .. _term-pp-pki-data:
 
