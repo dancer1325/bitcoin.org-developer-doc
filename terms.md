@@ -73,11 +73,13 @@ term-msg_filtered_witness_block (developer-reference) (`original target <https:/
 
 .. _term-msg_tx:
 
-term-msg_tx (developer-reference) (`original target <https://bitcoin.org/en/developer-reference#term-msg_tx>`__): The TXID data type identifier of an inventory on the P2P network.
+term-msg_tx (developer-reference) (`original target <https://bitcoin.org/en/developer-reference#term-msg_tx>`__)
+* == TXID data type identifier of an inventory | P2P network
 
 .. _term-msg_witness_block:
 
-term-msg_witness_block (developer-reference) (`original target <https://bitcoin.org/en/developer-reference#term-msg_witness_block>`__): An alternative to the block header hash data type identifier of an inventory on the P2P network used to request a block with witness serialization for SegWit.
+# term-msg_witness_block (developer-reference)
+* An alternative to the block header hash data type identifier of an inventory on the P2P network used to request a block with witness serialization for SegWit.
 
 .. _term-msg_witness_tx:
 
