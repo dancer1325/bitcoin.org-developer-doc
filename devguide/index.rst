@@ -1,7 +1,9 @@
 Developer Guides
 ================
 
-Find detailed information about the Bitcoin protocol and related specifications.
+* goal
+    ** Bitcoin protocol
+    ** Bitcoin specifications
 
 .. toctree::
   :maxdepth: 1
