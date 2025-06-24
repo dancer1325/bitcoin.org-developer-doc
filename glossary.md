@@ -17,32 +17,40 @@ Glossary
 
     **Not to be confused with:** P2PKH address, P2SH address, IP address
 
-  Block
-    One or more transactions prefaced by a block header and protected by proof of work. Blocks are the data stored on the block chain.
+# Block
+* \>=1 transactions /
+  * has
+    * PREVIOUS block header's hash
+  * protected -- by -- proof of work
+* == data stored | blockchain
 
-  Block chain
-  Best block chain
-    A chain of blocks with each block referencing the block that preceded it. The most-difficult-to-recreate chain is the best block chain.
+# Blockchain / Best blockchain
+* == chain of blocks /
+  * EACH block reference -- the -- PRECEEDING block
 
-    **Not to be confused with:** Header chain
+* BEST blockchain
+  * := most-difficult-to-recreate chain
 
-  Block header
-  Header
-    An 80-byte header belonging to a single block which is hashed repeatedly to create proof of work.
+# Block header / Header
+* == 80-byte header / 
+  * belong | 1! block
+  * hashed repeatedly -- to -- create proof of work
 
-  Height
-  Block height
-    The number of blocks preceding a particular block on a block chain. For example, the genesis block has a height of zero because zero block preceded it.
+    Height
+    Block height
+      The number of blocks preceding a particular block on a block chain. For example, the genesis block has a height of zero because zero block preceded it.
 
-  Block reward
-    The amount that miners may claim as a reward for creating a block. Equal to the sum of the block subsidy (newly available satoshis) plus the transactions fees paid by transactions included in the block.
+    Block reward
+      The amount that miners may claim as a reward for creating a block. Equal to the sum of the block subsidy (newly available satoshis) plus the transactions fees paid by transactions included in the block.
 
-    **Not to be confused with:** Block subsidy, Transaction fees
+      **Not to be confused with:** Block subsidy, Transaction fees
 
-  Maximum Block Size
-    The maximum size of a block according to the consensus rules. The current block size limit is 4 million weight units (1 million vbytes).
+# Maximum Block Size
+* 👀MAXIMUM block's size -- according to the -- consensus rules👀
+  * != Blockchain size 
+* CURRENT block size limit = 4 million weight units (== 1 million vbytes)
 
-    **Not to be confused with:** Block, Blockchain, Blockchain size
+    
 
   Blocks-first sync
     Synchronizing the block chain by downloading each block from a peer and then validating it.
@@ -95,29 +103,30 @@ Glossary
   Unconfirmed transaction
     A score indicating the number of blocks on the best block chain that would need to be modified to remove or modify a particular transaction. A confirmed transaction has a confirmation score of one or higher.
 
-  Consensus
-    When several nodes (usually most nodes on the network) all have the same blocks in their locally-validated best block chain.
+# Consensus
+* == SEVERAL nodes (NORMALLY MOST network's nodes) / 👀have the SAME blocks | their locally-validated blockchain👀
+* != 
+  * Social consensus
+  * Consensus rules
 
-    **Not to be confused with:** Social consensus (often used in discussion among developers to indicate that most people agree with a particular plan), Consensus rules (the rules that allow nodes to maintain consensus)
+# Consensus rules
+* == block validation rules / 👀FULL nodes follow -- to -- stay in consensus WITH OTHER nodes👀
 
-  Consensus rules
-    The block validation rules that full nodes follow to stay in consensus with other nodes.
+    Child pays for parent
+    CPFP
+    Ancestor mining
+      Selecting transactions for mining not just based on their fees but also based on the fees of their ancestors (parents) and descendants (children).
 
-    **Not to be confused with:** Consensus (what happens when nodes follow the same consensus rules)
+      **Not to be confused with:** Replace by Fee, RBF
 
-  Child pays for parent
-  CPFP
-  Ancestor mining
-    Selecting transactions for mining not just based on their fees but also based on the fees of their ancestors (parents) and descendants (children).
+# Denomination / Bitcoins / Satoshis
+* == Bitcoin value naming
+* units
+  * bitcoin 
+  * satoshi
+    * 1 bitcoin = 100,000,000 satoshis
 
-    **Not to be confused with:** Replace by Fee, RBF
-
-  Denomination
-  Bitcoins
-  Satoshis
-    Denominations of Bitcoin value, usually measured in fractions of a bitcoin but sometimes measured in multiples of a satoshi.  One bitcoin equals 100,000,000 satoshis.
-
-    **Not to be confused with:** Binary bits, a unit of data with two possible values
+      **Not to be confused with:** Binary bits, a unit of data with two possible values
 
 # Difficulty / Network difficulty
 * == how difficult it is to find a block vs difficulty of finding the easiest possible block
@@ -185,15 +194,19 @@ Glossary
 
       **Not to be confused with:** Blocks-first sync (Downloading entire blocks immediately without first getting their headers)
 
-    High-priority transaction
-    Free transaction
-      Transactions that don't have to pay a transaction fee because their inputs have been idle long enough to accumulated large amounts of priority.  Note: miners choose whether to accept free transactions.
+# High-priority transaction / Free transaction
+* transactions 
+  * / 
+    * ❌NOT have to pay a transaction fee❌
+    * their inputs accumulated | time -> HIGHER priority
+  * miners 
+    * can choose accept it
 
-    Initial block download
-    IBD
-      The process used by a new node (or long-offline node) to download a large number of blocks to catch up to the tip of the best block chain.
+        Initial block download
+        IBD
+          The process used by a new node (or long-offline node) to download a large number of blocks to catch up to the tip of the best block chain.
 
-      **Not to be confused with:** Blocks-first sync (syncing includes getting any amount of blocks; IBD is only used for large numbers of blocks)
+          **Not to be confused with:** Blocks-first sync (syncing includes getting any amount of blocks; IBD is only used for large numbers of blocks)
 
 # Input / TxIn
 * == transaction's input /
@@ -215,58 +228,62 @@ Glossary
 
     **Not to be confused with:** Inv message (one of the P2P messages that transmits inventories)
 
-  Locktime
-  nLockTime
-    Part of a transaction which indicates the earliest time or earliest block when that transaction may be added to the block chain.
+# Locktime / `nLockTime`
+* == transaction's part /
+  * the earliest time or earliest block | transaction may be added -- to the -- blockchain
 
-  Mainnet
-    The original and main network for Bitcoin transactions, where satoshis have real economic value.
+    Mainnet
+      The original and main network for Bitcoin transactions, where satoshis have real economic value.
 
-    **Not to be confused with:** Testnet (an open network very similar to mainnet where satoshis have no value), Regtest (a private testing node similar to testnet)
+      **Not to be confused with:** Testnet (an open network very similar to mainnet where satoshis have no value), Regtest (a private testing node similar to testnet)
 
-  Transaction malleability
-  Transaction mutability
-    The ability of someone to change (mutate) unconfirmed transactions without making them invalid, which changes the transaction's txid, making child transactions invalid.
+    Transaction malleability
+    Transaction mutability
+      The ability of someone to change (mutate) unconfirmed transactions without making them invalid, which changes the transaction's txid, making child transactions invalid.
 
-    **Not to be confused with:** BIP62 (a proposal for an optional new transaction version that reduces the set of known mutations for common transactions)
+      **Not to be confused with:** BIP62 (a proposal for an optional new transaction version that reduces the set of known mutations for common transactions)
 
-  Miner-activated soft fork
-  MASF
-    A Soft Fork activated by through miner signalling.
+    Miner-activated soft fork
+    MASF
+      A Soft Fork activated by through miner signalling.
 
-    **Not to be confused with:** User Activated Soft Fork (a soft fork activated by flag day or node enforcement instead of miner signalling.), Fork (a regular fork where all nodes follow the same consensus rules, so the fork is resolved once one chain has more proof of work than another), Hard fork (a permanent divergence in the block chain caused by non-upgraded nodes not following new consensus rules), Soft fork (a temporary divergence in the block chain caused by non-upgraded nodes not following new consensus rules), Software fork (when one or more developers permanently develops a codebase separately from other developers), Git fork (when one or more developers temporarily develops a codebase separately from other developers
+      **Not to be confused with:** User Activated Soft Fork (a soft fork activated by flag day or node enforcement instead of miner signalling.), Fork (a regular fork where all nodes follow the same consensus rules, so the fork is resolved once one chain has more proof of work than another), Hard fork (a permanent divergence in the block chain caused by non-upgraded nodes not following new consensus rules), Soft fork (a temporary divergence in the block chain caused by non-upgraded nodes not following new consensus rules), Software fork (when one or more developers permanently develops a codebase separately from other developers), Git fork (when one or more developers temporarily develops a codebase separately from other developers
 
-  Master chain code
-  Master private key
-    In HD wallets, the master chain code and master private key are the two pieces of data derived from the root seed.
+    Master chain code
+    Master private key
+      In HD wallets, the master chain code and master private key are the two pieces of data derived from the root seed.
 
-  Merkle block
-    A partial merkle tree connecting transactions matching a bloom filter to the merkle root of a block.
+# Merkle block
+* == partial merkle tree /
+  * transactions / match a bloom filter, are connected  -- to the -- block's merkle root 
+* != MerkleBlock message
 
-    **Not to be confused with:** MerkleBlock message (a P2P protocol message that transmits a merkle block)
+# Merkle root
+* == merkle tree's root node /
+  * descendant of ALL hashed pairs | tree
 
-  Merkle root
-    The root node of a merkle tree, a descendant of all the hashed pairs in the tree.  Block headers must include a valid merkle root descended from all transactions in that block.
+* Block headers
+  * ⚠️MUST include a valid merkle root⚠️
 
-    **Not to be confused with:** Merkle tree (the tree of which the merkle root is the root node), Merkle block (a partial merkle branch connecting the root to one or more leaves [transactions])
+# Merkle tree
+* tree
+  * == hashing paired dataS (== leaves) -- TILL -- the merkle root
 
-  Merkle tree
-    A tree constructed by hashing paired data (the leaves), then pairing and hashing the results until a single hash remains, the merkle root.  In Bitcoin, the leaves are almost always transactions from a single block.
+* Bitcoin's leaves
+  * == (ALMOST ALWAYS) transactions -- from a -- 1 block
 
-    **Not to be confused with:** Partial merkle branch (a branch connecting one or more leaves to the root), Merkle block (a partial merkle branch connecting one or more transactions from a single block to the block merkle root)
+      Message header
+        The four header fields prefixed to all messages on the Bitcoin P2P network.
 
-  Message header
-    The four header fields prefixed to all messages on the Bitcoin P2P network.
+      Minimum relay fee
+      Relay fee
+        The minimum transaction fee a transaction must pay (if it isn't a high-priority transaction) for a full node to relay that transaction to other nodes. There is no one minimum relay fee---each node chooses its own policy.
 
-  Minimum relay fee
-  Relay fee
-    The minimum transaction fee a transaction must pay (if it isn't a high-priority transaction) for a full node to relay that transaction to other nodes. There is no one minimum relay fee---each node chooses its own policy.
+        **Not to be confused with:** Transaction fee (the minimum relay fee is a policy setting that filters out transactions with too-low transaction fees)
 
-    **Not to be confused with:** Transaction fee (the minimum relay fee is a policy setting that filters out transactions with too-low transaction fees)
-
-  Mining
-  Miner
-    Mining is the act of creating valid Bitcoin blocks, which requires demonstrating proof of work, and miners are devices that mine or people who own those devices.
+      Mining
+      Miner
+        Mining is the act of creating valid Bitcoin blocks, which requires demonstrating proof of work, and miners are devices that mine or people who own those devices.
 
 # Multisig / Bare multisig
 * == pubkey script /
@@ -298,12 +315,14 @@ Glossary
 
           **Not to be confused with:** Lightweight node, SPV node
 
-        Null data transaction
-        OP_RETURN transaction
-        Data carrier transaction
-          A transaction type relayed and mined by default in Bitcoin Core 0.9.0 and later that adds arbitrary data to a provably unspendable pubkey script that full nodes don't have to store in their UTXO database.
+# Null data transaction / `OP_RETURN` transaction / Data carrier transaction
+* transaction type / 
+  * relayed
+  * mined, by default, | Bitcoin Core 0.9.0
+  * adds arbitrary data | provably unspendable pubkey script
+    * -> FULL nodes do NOT have to store | their UTXO database
 
-          **Not to be confused with:** OP_RETURN (an opcode used in one of the outputs in an OP_RETURN transaction)
+* != `OP_RETURN`
 
         Opcode
         Data-pushing opcode
@@ -470,34 +489,36 @@ Glossary
                 Serialized block
                   A complete block in its binary format---the same format used to calculate total block byte size; often represented using hexadecimal.
 
-                Serialized transaction
-                Raw transaction
-                  Complete transactions in their binary format; often represented using hexadecimal.  Sometimes called raw format because of the various Bitcoin Core commands with "raw" in their names.
+# Serialized transaction / Raw transaction
+* == WHOLE transactions / binary format
+  * represented -- via -- hexadecimal
+* raw format
+  * Reason: 🧠Bitcoin Core commands / 's names has "raw"🧠
 
-                SIGHASH_ALL
-                  Default signature hash type which signs the entire transaction except any signature scripts, preventing modification of the signed parts.
+                  SIGHASH_ALL
+                    Default signature hash type which signs the entire transaction except any signature scripts, preventing modification of the signed parts.
 
-                SIGHASH_ANYONECANPAY
-                  A signature hash type which signs only the current input.
+                  SIGHASH_ANYONECANPAY
+                    A signature hash type which signs only the current input.
 
-                  **Not to be confused with:** SIGHASH_SINGLE (which signs this input, its corresponding output, and other inputs partially)
+                    **Not to be confused with:** SIGHASH_SINGLE (which signs this input, its corresponding output, and other inputs partially)
 
-                SIGHASH_NONE
-                  Signature hash type which only signs the inputs, allowing anyone to change the outputs however they'd like.
+                  SIGHASH_NONE
+                    Signature hash type which only signs the inputs, allowing anyone to change the outputs however they'd like.
 
-                SIGHASH_SINGLE
-                  Signature hash type that signs the output corresponding to this input (the one with the same index value), this input, and any other inputs partially. Allows modification of other outputs and the sequence number of other inputs.
+                  SIGHASH_SINGLE
+                    Signature hash type that signs the output corresponding to this input (the one with the same index value), this input, and any other inputs partially. Allows modification of other outputs and the sequence number of other inputs.
 
-                  **Not to be confused with:** SIGHASH_ANYONECANPAY (a flag to signature hash types that only signs this single input)
+                    **Not to be confused with:** SIGHASH_ANYONECANPAY (a flag to signature hash types that only signs this single input)
 
-                Signature
-                  A value related to a public key which could only have reasonably been created by someone who has the private key that created that public key. Used in Bitcoin to authorize spending satoshis previously sent to a public key.
+                  Signature
+                    A value related to a public key which could only have reasonably been created by someone who has the private key that created that public key. Used in Bitcoin to authorize spending satoshis previously sent to a public key.
 
-                Signature hash
-                Sighash
-                  A flag to Bitcoin signatures that indicates what parts of the transaction the signature signs.  (The default is SIGHASH_ALL.) The unsigned parts of the transaction may be modified.
+                  Signature hash
+                  Sighash
+                    A flag to Bitcoin signatures that indicates what parts of the transaction the signature signs.  (The default is SIGHASH_ALL.) The unsigned parts of the transaction may be modified.
 
-                  **Not to be confused with:** Signed hash (a hash of the data to be signed), Transaction malleability / transaction mutability (although non-default sighash flags do allow optional malleability, malleability comprises any way a transaction may be mutated)
+                    **Not to be confused with:** Signed hash (a hash of the data to be signed), Transaction malleability / transaction mutability (although non-default sighash flags do allow optional malleability, malleability comprises any way a transaction may be mutated)
 
 # Signature script / ScriptSig
 * == data /
@@ -527,22 +548,25 @@ Glossary
 
                 **Not to be confused with:** Orphan block (a block whose previous (parent) hash field points to an unknown block, meaning the orphan can't be validated)
 
-              Standard Transaction
-                A transaction that passes Bitcoin Core's IsStandard() and IsStandardTx() tests. Only standard transactions are mined or broadcast by peers running the default Bitcoin Core software.
+# Standard Transaction
+* == transaction /
+  * passes Bitcoin Core's `IsStandard()` & `IsStandardTx()` tests
+* are mined OR broadcasted by
+  * ONLY peers / run the default Bitcoin Core software 
 
-              Start string
-              Network magic
-                Four defined bytes which start every message in the Bitcoin P2P protocol to allow seeking to the next message.
+                Start string
+                Network magic
+                  Four defined bytes which start every message in the Bitcoin P2P protocol to allow seeking to the next message.
 
-              Testnet
-                A global testing environment in which developers can obtain and spend satoshis that have no real-world value on a network that is very similar to the Bitcoin mainnet.
+                Testnet
+                  A global testing environment in which developers can obtain and spend satoshis that have no real-world value on a network that is very similar to the Bitcoin mainnet.
 
-                **Not to be confused with:** Regtest (a local testing environment where developers can control block generation)
+                  **Not to be confused with:** Regtest (a local testing environment where developers can control block generation)
 
-              Token
-                A token is a programmable digital asset with its own codebase that resides on an already existing block chain. Tokens are used to help facilitate the creation of decentralized applications.
+                Token
+                  A token is a programmable digital asset with its own codebase that resides on an already existing block chain. Tokens are used to help facilitate the creation of decentralized applications.
 
-                **Not to be confused with:** Bitcoins, Satoshis, Security token, Denominations
+                  **Not to be confused with:** Bitcoins, Satoshis, Security token, Denominations
 
 # Transaction fee / Miners fee
 * == amount remaining
@@ -572,7 +596,7 @@ Glossary
 # Wallet
 * := software / 
   * stores private keys
-  * monitors the block chain
+  * monitors the blockchain
     * ways
       * client of a server / does the processing
     * Reason: 🧠enable users -- to -- spend & receive satoshis🧠
@@ -684,22 +708,24 @@ Glossary
                   Stanndard block relay
                     The regular block relay method: announcing a block with an inv message and waiting for a response.
 
-                  Transaction version number
-                    A version number prefixed to transactions to allow upgrading.
+# Transaction version number
+* == version number / prefix the transactions
+  * allow
+    * upgrading
 
-                  Unique Address
-                    Address which are only used once to protect privacy and increase security.
+                      Unique Address
+                        Address which are only used once to protect privacy and increase security.
 
-                  Unsolicited block push
-                    When a miner sends a block message without sending an inv message first.
+                      Unsolicited block push
+                        When a miner sends a block message without sending an inv message first.
 
-                  URI qr code
-                    A QR code containing a bitcoin: URI.
+                      URI qr code
+                        A QR code containing a bitcoin: URI.
 
-                  V2 block 
-                    The current version of Bitcoin blocks.
+                      V2 block 
+                        The current version of Bitcoin blocks.
 
-                  x509certificates
+                      x509certificates
 
-                  term-x509certificates (developer-examples) (`original target <https://bitcoin.org/en/developer-examples#term-x509certificates>`__)
+                      term-x509certificates (developer-examples) (`original target <https://bitcoin.org/en/developer-examples#term-x509certificates>`__)
 
