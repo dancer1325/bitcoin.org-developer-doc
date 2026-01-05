@@ -578,15 +578,30 @@ Glossary
 * == identifier
   * uses
     * uniquely identify -- a -- particular transaction
-  * == transaction's sha256d hash 
-
+  * == transaction's sha256d hash
 * != [Outpoint](#outpoint)
 
-    User-activated soft fork
-    UASF
-      A Soft Fork activated by flag day or node enforcement instead of miner signalling.
-
-      **Not to be confused with:** Miner Activated Soft Fork (a soft fork activated through miner signalling), Fork (a regular fork where all nodes follow the same consensus rules, so the fork is resolved once one chain has more proof of work than another), Hard fork (a permanent divergence in the block chain caused by non-upgraded nodes not following new consensus rules), Soft fork (a temporary divergence in the block chain caused by non-upgraded nodes not following new consensus rules), Software fork (when one or more developers permanently develops a codebase separately from other developers), Git fork (when one or more developers temporarily develops a codebase separately from other developers
+# User-activated soft fork (UASF)
+* Soft Fork / activated -- by -- 
+  * flag day OR
+  * node enforcement
+    * != miner signalling
+* != 
+  * Miner Activated Soft Fork
+    * == soft fork / activated -- through -- miner signalling
+  * Fork 
+    * := regular fork / ALL nodes follow the SAME consensus rules
+    * if the chain's proof of work > another chain's proof of work -> the fork is resolved 
+  * Hard fork
+    * := permanent divergence | block chain /
+      * NON-upgraded nodes do NOT follow NEW consensus rules
+  * Soft fork
+    * := temporary divergence | block chain /
+      * NON-upgraded nodes do NOT follow NEW consensus rules
+  * Software fork
+    * := >=1 developers PERMANENTLY develops a codebase / separate -- from -- OTHER developers
+  * Git fork
+    * := >=1 developers TEMPORARY develops a codebase / separate -- from -- OTHER developers
 
 # UTXO
 * := Unspent Transaction Output /
@@ -602,77 +617,78 @@ Glossary
     * Reason: 🧠enable users -- to -- spend & receive satoshis🧠
 
 * != HD wallet
-  * (a protocol that allows all of a wallet's keys to be created from a single seed)
+  * == protocol /
+    * ALL wallet's keys are created -- from -- 1! seed
 
-            WIF
-            Wallet Import Format
-              A data interchange format designed to allow exporting and importing a single private key with a flag indicating whether or not it uses a compressed public key.
+              WIF
+              Wallet Import Format
+                A data interchange format designed to allow exporting and importing a single private key with a flag indicating whether or not it uses a compressed public key.
 
-              **Not to be confused with:** Extended private keys (which allow importing a hierarchy of private keys)
+                **Not to be confused with:** Extended private keys (which allow importing a hierarchy of private keys)
 
-            Watch-only address
-              An address or pubkey script stored in the wallet without the corresponding private key, allowing the wallet to watch for outputs but not spend them.
+              Watch-only address
+                An address or pubkey script stored in the wallet without the corresponding private key, allowing the wallet to watch for outputs but not spend them.
   
-            Bitcoin URI
-              A URI which allows receivers to encode payment details so spenders don't have to manually enter addresses and other details.
+              Bitcoin URI
+                A URI which allows receivers to encode payment details so spenders don't have to manually enter addresses and other details.
 
-            Certificate chain
-              A chain of certificates connecting a individual's leaf certificate to the certificate authority's root certificate.
+              Certificate chain
+                A chain of certificates connecting a individual's leaf certificate to the certificate authority's root certificate.
 
-            Coinbase block height
-              The current block's height encoded into the first bytes of the coinbase field.
+              Coinbase block height
+                The current block's height encoded into the first bytes of the coinbase field.
 
-            Fiat
-              National currencies such as the dollar or euro.
+              Fiat
+                National currencies such as the dollar or euro.
 
-            Intermediate certificate
-              A intermediate certificate authority certificate which helps connect a leaf (receiver) certificate to a root certificate authority.
+              Intermediate certificate
+                A intermediate certificate authority certificate which helps connect a leaf (receiver) certificate to a root certificate authority.
 
-            Key index
-              An index number used in the HD wallet formula to generate child keys from a parent key.
+              Key index
+                An index number used in the HD wallet formula to generate child keys from a parent key.
 
-            Key pair
-              A private key and its derived public key.
+              Key pair
+                A private key and its derived public key.
 
-            Label
-              The label parameter of a bitcoin: URI which provides the spender with the receiver's name (unauthenticated).
+              Label
+                The label parameter of a bitcoin: URI which provides the spender with the receiver's name (unauthenticated).
 
-            Leaf certificate
-              The end-node in a certificate chain; in the payment protocol, it is the certificate belonging to the receiver of satoshis.
+              Leaf certificate
+                The end-node in a certificate chain; in the payment protocol, it is the certificate belonging to the receiver of satoshis.
 
-            Merge
-              Spending, in the same transaction, multiple outputs which can be traced back to different previous spenders, leaking information about how many satoshis you control.
+              Merge
+                Spending, in the same transaction, multiple outputs which can be traced back to different previous spenders, leaking information about how many satoshis you control.
 
-            Merge avoidance
-              A strategy for selecting which outputs to spend that avoids merging outputs with different histories that could leak private information.
+              Merge avoidance
+                A strategy for selecting which outputs to spend that avoids merging outputs with different histories that could leak private information.
 
-            Message
-              A parameter of bitcoin: URIs which allows the receiver to optionally specify a message to the spender.
+              Message
+                A parameter of bitcoin: URIs which allows the receiver to optionally specify a message to the spender.
 
-            Micropayment channel
-              term-micropayment-channel (contracts-guide) (`original target <https://bitcoin.org/en/contracts-guide#term-micropayment-channel>`__)
+              Micropayment channel
+                term-micropayment-channel (contracts-guide) (`original target <https://bitcoin.org/en/contracts-guide#term-micropayment-channel>`__)
 
-            OP CHECKMULTISIG
-              Opcode which returns true if one or more provided signatures (m) sign the correct parts of a transaction and match one or more provided public keys (n).
+              OP CHECKMULTISIG
+                Opcode which returns true if one or more provided signatures (m) sign the correct parts of a transaction and match one or more provided public keys (n).
 
-            Output index
-              The sequentially-numbered index of outputs in a single transaction starting from 0.
+              Output index
+                The sequentially-numbered index of outputs in a single transaction starting from 0.
 
 
-            PKI
-              Public Key Infrastructure; usually meant to indicate the X.509 certificate system used for HTTP Secure (https).
+              PKI
+                Public Key Infrastructure; usually meant to indicate the X.509 certificate system used for HTTP Secure (https).
 
-            Point function
-              The ECDSA function used to create a public key from a private key.
+              Point function
+                The ECDSA function used to create a public key from a private key.
 
-            PP amount
-              Part of the Output part of the PaymentDetails part of a payment protocol where receivers can specify the amount of satoshis they want paid to a particular pubkey script.
+              PP amount
+                Part of the Output part of the PaymentDetails part of a payment protocol where receivers can specify the amount of satoshis they want paid to a particular pubkey script.
 
-            PP expires
-              The expires field of a PaymentDetails where the receiver tells the spender when the PaymentDetails expires.
+              PP expires
+                The expires field of a PaymentDetails where the receiver tells the spender when the PaymentDetails expires.
 
-            PP memo
-              The memo fields of PaymentDetails, Payment, and PaymentACK which allow spenders and receivers to send each other memos.
+              PP memo
+                The memo fields of PaymentDetails, Payment, and PaymentACK which allow spenders and receivers to send each other memos.
 
 # PP merchant data
 * == PaymentDetails' merchant_data & Payment's merchant_data 
