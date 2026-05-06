@@ -1,11 +1,10 @@
 Glossary
 ========
 
-.. glossary::
-
-  51 percent attack
-  Majority attack
-    The ability of someone controlling a majority of network hash rate to revise transaction history and prevent new transactions from confirming.
+# 51 percent attack / Majority attack
+* := someone control MAJORITY of network [hash rate](#hash-rate) / can
+  * revise transaction history 
+  * prevent new transactions -- from -- confirming
 
   Address
     A 20-byte hash formatted using base58check to produce either a P2PKH or P2SH Bitcoin address.  Currently the most common way users exchange payment information.
@@ -168,6 +167,13 @@ Glossary
 
       Hardened extended key
         A variation on HD wallet extended keys where only the hardened extended private key can derive child keys. This prevents compromise of the chain code plus any private key from putting the whole wallet at risk.
+
+# Hash rate
+* := computation power / 
+  * used to 
+    * mine blocks
+    * process transactions
+  * == hashes / second
 
 # HD protocol / HD wallet
 * == Hierarchical Deterministic (HD) key creation + transfer protocol (BIP32)
